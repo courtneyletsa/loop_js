@@ -24,13 +24,52 @@
             <th scope="col">Action</th>
         </tr>
     </thead>
+    <tbody>
+        
+    </tbody>
    </table>
 
 
 
 
-    <script>
-        
+    <script lang="js">
+        const queries = [
+                            {
+                                id: 1, student: "Genesis", query: "Permission to absent from tech class", status: "APPROVED"
+                            },
+                            {
+                                id: 2, student: "Nunya", query: "Permission to Absa Hackathon", status: "APPROVED"
+                            },
+                            {
+                                id: 3, student: "Fleur", query: "Permission to shoot film", status: "DECLINED"
+                            },
+                            {
+                                id: 4, student: "Delight", query: "Need some delightful time to cool off", status: "DECLINED"
+                            },
+                            {
+                                id: 5, student: "Sila", query: "Permission to participate in Absa Hackathon", status: "PENDING"
+                            },
+]
+        tbody = document.querySelector('tbody')
+        let iterator = 0;
+        while(iterator < queries.length) {
+            console.log(queries[iterator]);
+            let eit = queries[iterator];
+            let tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>${eit.id}</td>
+            <td>${eit.student}</td>
+            <td>${eit.query}</td>
+            <td>${eit.status}</td>
+            <td>
+                <a href="">Approve</a>
+                <a href="">Decline</a>
+            </td>
+                                `
+            console.log(eit.id, eit.student);
+            tbody.appendChild(tr)
+            iterator++;
+        }
     </script>
 
 </body>
